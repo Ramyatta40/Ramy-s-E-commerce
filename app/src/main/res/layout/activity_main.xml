@@ -64,14 +64,7 @@
 
             />
 
-        <com.hbb20.CountryCodePicker
-            android:id="@+id/countyCodePicker"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/welcome" />
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputLayout1"
@@ -91,17 +84,31 @@
 
             <EditText
                 android:id="@+id/phoneInput"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:gravity="center"
                 android:hint=""
-                app:layout_constraintStart_toEndOf="@id/countyCodePicker"
+
                 app:layout_constraintTop_toTopOf="parent" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/countyCodePicker"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="10dp"
+            app:ccp_showFlag="false"
+            app:ccp_showFullName="false"
+            app:ccp_showNameCode="false"
+            app:ccp_showPhoneCode="true"
+            app:layout_constraintStart_toStartOf="@id/inputLayout1"
+            app:layout_constraintTop_toTopOf="@id/inputLayout1"
+            app:layout_constraintBottom_toBottomOf="@id/inputLayout1"
+            />
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputLayout2"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -122,7 +129,7 @@
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:gravity="center"
                 app:layout_constraintTop_toBottomOf="@id/countyCodePicker"
-
+android:inputType="textPassword"
 
                 />
 

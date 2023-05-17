@@ -33,7 +33,7 @@
             />
 
         <TextView
-            android:id="@+id/welcome"
+            android:id="@+id/welcome2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_20sdp"
@@ -43,14 +43,7 @@
 
             />
 
-        <com.hbb20.CountryCodePicker
-            android:id="@+id/countyCodePicker"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/welcome" />
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputLayout3"
@@ -65,11 +58,11 @@
             app:boxCornerRadiusTopStart="@dimen/_30sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/welcome">
+            app:layout_constraintTop_toBottomOf="@id/welcome2">
 
 
             <EditText
-                android:id="@+id/phoneInput"
+                android:id="@+id/phoneInput2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
@@ -80,7 +73,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </com.google.android.material.textfield.TextInputLayout>
-
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/countyCodePicker2"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="10dp"
+            app:ccp_showFlag="false"
+            app:ccp_showFullName="false"
+            app:ccp_showNameCode="false"
+            app:ccp_showPhoneCode="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/inputLayout3"
+            app:layout_constraintBottom_toBottomOf="@id/inputLayout3"/>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputLayout1"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -126,7 +131,7 @@
             app:layout_constraintTop_toBottomOf="@id/inputLayout1">
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/emailInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
@@ -153,7 +158,7 @@
             app:layout_constraintTop_toBottomOf="@id/inputLayout2">
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/password2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
@@ -196,11 +201,20 @@
 
         <CheckBox
             android:id="@+id/checkbox"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="I agree to Terms of Service and Privacy Policy."
+            android:text="I Agree To "
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/inputLayout5"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_11sdp"
+            app:layout_constraintStart_toEndOf="@id/checkbox"
+            app:layout_constraintTop_toTopOf="@id/checkbox"
+            android:text=" Terms of Service and Privacy Policy."
 
             />
 
