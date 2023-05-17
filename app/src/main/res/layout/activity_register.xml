@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_20sdp"
-            android:text="login"
+            android:text="Create New Account"
             android:textColor="@color/black"
             android:textSize="@dimen/_20sdp"
             android:textStyle="bold"
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_20sdp"
-            android:text="Welcome, log in with your phone number."
+            android:text="Hello, we are glad you have joined our family."
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/loginText"
 
@@ -58,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:hint="791234567"
+            android:hint="Phone Number"
             app:boxCornerRadiusBottomEnd="@dimen/_30sdp"
             app:boxCornerRadiusBottomStart="@dimen/_30sdp"
             app:boxCornerRadiusTopEnd="@dimen/_30sdp"
@@ -194,39 +194,61 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="I agree to Terms of Service and Privacy Policy."
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputLayout5"
+
+            />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/registerBtn"
             android:layout_width="@dimen/_200sdp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_1sdp"
             android:background="@drawable/login_button"
             android:text="Register"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inputLayout5" />
+            app:layout_constraintTop_toBottomOf="@+id/checkbox" />
 
-        <TextView
-            android:id="@+id/dont_have"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:text="Already have an account?"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/registerBtn" />
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/registerBtn"
+            tools:layout_editor_absoluteX="1dp">
 
-        <TextView
-            android:id="@+id/log_in"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:text="log in"
-            android:textColor="#A501FF"
-            app:layout_constraintStart_toEndOf="@id/dont_have"
-            app:layout_constraintTop_toBottomOf="@id/registerBtn" />
+
+            <TextView
+                android:id="@+id/already_have"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+
+                android:text="Already Have An Account?"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/registerBtn" />
+
+            <TextView
+                android:id="@+id/log_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_15sdp"
+
+                android:text="Log In"
+                android:textColor="#A501FF"
+                app:layout_constraintStart_toEndOf="@id/already_have"
+                app:layout_constraintTop_toBottomOf="@id/registerBtn"
+
+                />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
