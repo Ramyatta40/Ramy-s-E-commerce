@@ -6,7 +6,6 @@
 <ImageView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:src="https://www.shutterstock.com/image-vector/3d-vector-conceptual-illustration-mobile-260nw-1828126133.jpg"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
 

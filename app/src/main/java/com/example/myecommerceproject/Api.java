@@ -21,16 +21,16 @@ public interface Api {
                           @Part("Password") RequestBody password,
                           @Part("ConCode") RequestBody conCode
     );
+
     @Multipart
     @POST("SignUp.php")
     Call<UserModel> signUp(@Part("Phone") RequestBody phone,
-                          @Part("Password") RequestBody password,
-                          @Part("ConCode") RequestBody conCode,
-                          @Part("Name") RequestBody name,
-                          @Part("Email") RequestBody email
+                           @Part("Password") RequestBody password,
+                           @Part("ConCode") RequestBody conCode,
+                           @Part("Name") RequestBody name,
+                           @Part("Email") RequestBody email
     );
-@Multipart
-    @GET  ("getBannerImages.php")
-    Call<List<BannerItem> > getImages();
+    @GET("getBannerImages.php")
+    Call<List<BannerItem>> getImages();
 
 }
