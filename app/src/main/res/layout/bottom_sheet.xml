@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingHorizontal="@dimen/_20sdp"
+    android:paddingBottom="@dimen/_90sdp">
+
+<ImageView
+    android:id="@+id/like_icon_bg"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/backgroundsuffix"
+    android:layout_marginTop="@dimen/_40sdp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    />
+    <ImageView
+        android:id="@+id/thumb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/vectorlike_thumb"
+        app:layout_constraintTop_toTopOf="@id/like_icon_bg"
+        app:layout_constraintStart_toStartOf="@id/like_icon_bg"
+        app:layout_constraintEnd_toEndOf="@id/like_icon_bg"
+        app:layout_constraintBottom_toBottomOf="@id/like_icon_bg"
+        />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/vectorlike_com"
+        app:layout_constraintBottom_toBottomOf="@id/like_icon_bg"
+        app:layout_constraintEnd_toStartOf="@id/thumb"
+        app:layout_constraintTop_toTopOf="@id/like_icon_bg"
+        app:layout_constraintVertical_bias="0.553" />
+<TextView
+    android:id="@+id/register_complete"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/like_icon_bg"
+    android:text="Registeration Completed"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:textSize="@dimen/_20ssp"
+    android:layout_margin="@dimen/_10sdp"
+    android:textColor="@color/black"
+    android:textStyle="bold"
+
+
+    />
+    <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/got_it"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/register_complete"
+    android:text="Got It"
+        android:layout_margin="@dimen/_20sdp"
+        android:background="@drawable/login_button"
+        android:textColor="@color/white"
+android:textSize="@dimen/_15ssp"
+        android:textStyle="bold"
+
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

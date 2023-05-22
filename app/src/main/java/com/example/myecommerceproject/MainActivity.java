@@ -69,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
                 pd.dismiss();
                 if (response.body().isResult()) {
                     Toast.makeText(MainActivity.this, "Done", Toast.LENGTH_LONG).show();
-
+                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(MainActivity.this, response.body().getMsg(), Toast.LENGTH_LONG).show();
                 }

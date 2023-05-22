@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.hbb20.CountryCodePicker;
 
 import okhttp3.MediaType;
@@ -18,6 +19,8 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 public class Register extends AppCompatActivity {
     TextView log_in;
@@ -28,6 +31,8 @@ public class Register extends AppCompatActivity {
     EditText passwordConf;
     EditText password2;
     Button registerBtn;
+    Button gotIt;
+    BottomSheetDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,10 @@ public class Register extends AppCompatActivity {
         passwordConf = findViewById(R.id.passwordconf);
         password2 = findViewById(R.id.password2);
         registerBtn = findViewById(R.id.registerBtn);
+        dialog = new BottomSheetDialog(this);
+        gotIt = findViewById(R.id.got_it);
+        View view = getLayoutInflater().inflate(R.layout.bottom_sheet, null, false);
+        dialog.setContentView(view);
         log_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,7 +63,15 @@ public class Register extends AppCompatActivity {
                 signUp();
             }
         });
+        gotIt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Register.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
 
     public void signUp() {
         ProgressDialog pd = new ProgressDialog(this);
@@ -68,7 +85,7 @@ public class Register extends AppCompatActivity {
         RequestBody nameRequestBody = RequestBody.create(MediaType.parse("text/plain"), nameInput.getText().toString());
         RequestBody emailRequestBody = RequestBody.create(MediaType.parse("text/plain"), emailInput.getText().toString());
 
-        Call<UserModel> retCall = service.signUp(phoneRequestBody, passwordRequestBody, conCodeRequestBody, emailRequestBody, nameRequestBody);
+        Call<UserModel> retCall = service.signUp(phoneRequestBody, passwordRequestBody, conCodeRequestBody, nameRequestBody, emailRequestBody);
         retCall.enqueue(new Callback<UserModel>() {
             @Override
 
@@ -76,6 +93,7 @@ public class Register extends AppCompatActivity {
                 pd.dismiss();
                 if (response.body().isResult()) {
                     Toast.makeText(Register.this, "Done", Toast.LENGTH_LONG).show();
+                    dialog.show();
 
                 } else {
                     Toast.makeText(Register.this, response.body().getMsg(), Toast.LENGTH_LONG).show();
