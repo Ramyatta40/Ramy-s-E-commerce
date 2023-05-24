@@ -32,5 +32,12 @@ public interface Api {
     );
     @GET("getBannerImages.php")
     Call<List<BannerItem>> getImages();
+    @GET("GetCategories.php")
+    Call<List<CategoryItem>> getCategories();
+    @Multipart
+    @POST ("getShops.php")
+    Call<List<ShopItem>> getShops(
+            @Part("Id_categories") RequestBody id_categories
+    );
 
 }

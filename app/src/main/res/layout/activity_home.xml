@@ -14,75 +14,111 @@
         android:src="@drawable/icon_image_1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/ecommerce_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ECOMMERCE"
-        app:layout_constraintStart_toEndOf="@id/home_icon"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/home_icon"
-        android:textStyle="bold"
-        android:textSize="@dimen/_20ssp"
-        android:textColor="@color/black"
         android:layout_marginLeft="@dimen/_20sdp"
-        />
-<ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:src="@drawable/profile_icon"
+        android:text="ECOMMERCE"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/home_icon"
+        app:layout_constraintStart_toEndOf="@id/home_icon"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    android:layout_margin="@dimen/_10sdp"
-
-    />
-<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/banner_recycler"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/_120sdp"
-    app:layout_constraintTop_toBottomOf="@id/home_icon"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    android:layout_margin="@dimen/_5sdp"
-    />
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+
+        android:src="@drawable/profile_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/banner_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        android:layout_margin="@dimen/_5sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_icon" />
+
+    <TextView
         android:id="@+id/categories_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
         android:text="Categories"
+        android:textColor="@color/black"
         android:textSize="@dimen/_20ssp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_margin="@dimen/_10sdp"
         app:layout_constraintStart_toStartOf="parent"
 
 
-        app:layout_constraintTop_toBottomOf="@id/banner_recycler"
-        />
+        app:layout_constraintTop_toBottomOf="@id/banner_recycler" />
+
     <TextView
         android:id="@+id/see_all_cat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        app:layout_constraintTop_toTopOf="@id/categories_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/categories_text"
+        android:layout_marginRight="@dimen/_15sdp"
         android:text="See All"
         android:textColor="@color/purple_200"
         android:textSize="@dimen/_13ssp"
         android:textStyle="bold"
-        android:layout_marginRight="@dimen/_15sdp"
-        />
+        app:layout_constraintBottom_toBottomOf="@id/categories_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/categories_text" />
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categories_select"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/categories_text" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/horizontal_con_lay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/categories_select">
 
+        <TextView
+            android:id="@+id/collection_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:text="All collection"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18ssp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        app:layout_constraintTop_toBottomOf="@id/categories_text"
-        app:layout_constraintStart_toStartOf="parent"
+        <ImageView
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/baseline_arrow_forward_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/shops_rec_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
-
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_con_lay" />
 </androidx.constraintlayout.widget.ConstraintLayout>

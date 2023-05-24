@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BannerRecycleAdapter  extends RecyclerView.Adapter<BannerRecycleAdapter.viewItem> {
+public class BannerRecycleAdapter extends RecyclerView.Adapter<BannerRecycleAdapter.viewItem> {
 
     Context c;
     List<BannerItem> items;
@@ -26,21 +26,19 @@ public class BannerRecycleAdapter  extends RecyclerView.Adapter<BannerRecycleAda
 
     class viewItem extends RecyclerView.ViewHolder {
         ImageView image;
-        TextView text;
+
 
         public viewItem(View itemView) {
             super(itemView);
-            //image = itemView.findViewById(R.id.image);
-           // text = itemView.findViewById(R.id.text);
+            image = itemView.findViewById(R.id.banner_custom_layout);
+            // text = itemView.findViewById(R.id.text);
 
         }
     }
 
-
     @Override
     public viewItem onCreateViewHolder(final ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.banner_layout, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.banner_layout, parent, false);
         return new viewItem(itemView);
     }
 
@@ -55,6 +53,5 @@ public class BannerRecycleAdapter  extends RecyclerView.Adapter<BannerRecycleAda
     public int getItemCount() {
         return items.size();
     }
-
 
 }

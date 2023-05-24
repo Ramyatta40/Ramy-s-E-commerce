@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/splach_screen_1"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/icon_image"
@@ -144,18 +144,28 @@ android:inputType="textPassword"
             android:text="forgot password?"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/inputLayout2" />
+        <CheckBox
+            android:id="@+id/remember_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remmember me"
+            app:layout_constraintTop_toBottomOf="@id/forgotText"
+app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="@dimen/_5sdp"
+            />
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/loginBtn"
             android:layout_width="@dimen/_200sdp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_4sdp"
             android:background="@drawable/login_button"
             android:text="Log in"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/forgotText" />
+            app:layout_constraintTop_toBottomOf="@id/remember_check" />
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

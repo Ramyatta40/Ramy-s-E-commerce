@@ -7,10 +7,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.checkbox.MaterialCheckBox;
 import com.hbb20.CountryCodePicker;
 
 import okhttp3.MediaType;
@@ -19,34 +22,42 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     TextView createAccount;
     CountryCodePicker countryCodePicker;
     EditText phoneNum;
     EditText password;
     Button login;
     UserModel loginEntry;
-
+    boolean isRememberChecked;
+CheckBox rememberCheck;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         createAccount = findViewById(R.id.createAccount);
         countryCodePicker = findViewById(R.id.countyCodePicker);
         phoneNum = findViewById(R.id.phoneInput);
         password = findViewById(R.id.password);
         login = findViewById(R.id.loginBtn);
+        rememberCheck = findViewById(R.id.remember_check);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 login();
             }
         });
-
+rememberCheck.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+       boolean isChecked= ((CheckBox)view).isChecked();
+        isRememberChecked = isChecked;
+    }
+});
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Register.class);
+                Intent intent = new Intent(LoginActivity.this, Register.class);
                 startActivity(intent);
             }
         });
@@ -68,11 +79,17 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<UserModel> call, Response<UserModel> response) {
                 pd.dismiss();
                 if (response.body().isResult()) {
-                    Toast.makeText(MainActivity.this, "Done", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                    Toast.makeText(LoginActivity.this, "Done", Toast.LENGTH_LONG).show();
+                    if (isRememberChecked){
+                        General.addToSharedPreference(LoginActivity.this, "Id", response.body().getId());
+                    }
+                    else{
+                        General.addToSharedPreference(LoginActivity.this, "Id", "");
+                    }
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
                 } else {
-                    Toast.makeText(MainActivity.this, response.body().getMsg(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, response.body().getMsg(), Toast.LENGTH_LONG).show();
                 }
             }
 

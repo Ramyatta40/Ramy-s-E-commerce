@@ -20,8 +20,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-
 public class Register extends AppCompatActivity {
     TextView log_in;
     CountryCodePicker countryCodePicker2;
@@ -53,7 +51,7 @@ public class Register extends AppCompatActivity {
         log_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Register.this, MainActivity.class);
+                Intent intent = new Intent(Register.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -66,7 +64,7 @@ public class Register extends AppCompatActivity {
         gotIt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Register.this, MainActivity.class);
+                Intent intent = new Intent(Register.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
