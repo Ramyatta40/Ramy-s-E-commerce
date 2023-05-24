@@ -1,4 +1,4 @@
-package com.example.myecommerceproject;
+package com.example.myecommerceproject.models;
 
 public class UserModel {
 

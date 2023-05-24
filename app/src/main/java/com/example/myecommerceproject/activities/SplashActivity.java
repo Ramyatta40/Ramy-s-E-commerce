@@ -1,4 +1,4 @@
-package com.example.myecommerceproject;
+package com.example.myecommerceproject.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,9 @@ import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import com.example.myecommerceproject.General;
+import com.example.myecommerceproject.R;
 
 public class SplashActivity extends AppCompatActivity {
     ImageView icon;

@@ -1,4 +1,4 @@
-package com.example.myecommerceproject;
+package com.example.myecommerceproject.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myecommerceproject.models.CategoryItem;
+import com.example.myecommerceproject.R;
 
 import java.util.List;
 

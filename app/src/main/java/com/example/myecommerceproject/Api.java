@@ -1,7 +1,10 @@
 package com.example.myecommerceproject;
 
-import android.app.DownloadManager;
 
+import com.example.myecommerceproject.models.BannerItem;
+import com.example.myecommerceproject.models.CategoryItem;
+import com.example.myecommerceproject.models.ShopItem;
+import com.example.myecommerceproject.models.UserModel;
 
 import java.util.List;
 
@@ -11,7 +14,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
-import retrofit2.http.Path;
 
 public interface Api {
 

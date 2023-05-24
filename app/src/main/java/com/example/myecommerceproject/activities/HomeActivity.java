@@ -1,4 +1,4 @@
-package com.example.myecommerceproject;
+package com.example.myecommerceproject.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -6,12 +6,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import com.example.myecommerceproject.Api;
+import com.example.myecommerceproject.models.BannerItem;
+import com.example.myecommerceproject.adapters.BannerRecycleAdapter;
+import com.example.myecommerceproject.models.CategoryItem;
+import com.example.myecommerceproject.adapters.CategorySelectAdapter;
+import com.example.myecommerceproject.R;
+import com.example.myecommerceproject.RetrofitClint;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -21,7 +27,8 @@ import retrofit2.Response;
 public class HomeActivity extends AppCompatActivity {
     RecyclerView bannerRecycler;
     RecyclerView categorySelect;
-TextView see_all_cat;
+    TextView see_all_cat;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

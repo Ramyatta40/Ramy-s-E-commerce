@@ -1,4 +1,4 @@
-package com.example.myecommerceproject;
+package com.example.myecommerceproject.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,11 +9,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.checkbox.MaterialCheckBox;
+import com.example.myecommerceproject.Api;
+import com.example.myecommerceproject.General;
+import com.example.myecommerceproject.R;
+import com.example.myecommerceproject.RetrofitClint;
+import com.example.myecommerceproject.models.UserModel;
 import com.hbb20.CountryCodePicker;
 
 import okhttp3.MediaType;
