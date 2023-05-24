@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -18,15 +21,25 @@ import retrofit2.Response;
 public class HomeActivity extends AppCompatActivity {
     RecyclerView bannerRecycler;
     RecyclerView categorySelect;
-
+TextView see_all_cat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        see_all_cat = findViewById(R.id.see_all_cat);
         bannerRecycler = findViewById(R.id.banner_recycler);
         categorySelect = findViewById(R.id.categories_select);
         bannerRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         categorySelect.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        see_all_cat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, AllCategoriesActivity.class);
+                startActivity(intent);
+            }
+        });
+
         getBannerImages();
         getCategoriesData();
 
