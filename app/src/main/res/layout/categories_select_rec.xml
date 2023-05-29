@@ -8,8 +8,10 @@
     android:layout_height="wrap_content"
     android:id="@+id/select_btn"
     android:text="All"
-    android:layout_margin="@dimen/_2sdp"
+    android:layout_margin="@dimen/_4sdp"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
+
+
     />
 </androidx.constraintlayout.widget.ConstraintLayout>

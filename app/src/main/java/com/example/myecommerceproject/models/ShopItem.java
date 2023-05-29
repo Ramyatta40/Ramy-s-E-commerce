@@ -1,15 +1,42 @@
 package com.example.myecommerceproject.models;
 
 public class ShopItem {
-    int Id;
+    String Id;
     String ImageURL;
     String Name;
+    String NameAr;
+    String Longitude;
+    String Latitude;
 
-    public int getId() {
+    public String getNameAr() {
+        return NameAr;
+    }
+
+    public void setNameAr(String nameAr) {
+        NameAr = nameAr;
+    }
+
+    public String getLongitude() {
+        return Longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        Longitude = longitude;
+    }
+
+    public String getLatitude() {
+        return Latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        Latitude = latitude;
+    }
+
+    public String getId() {
         return Id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         Id = id;
     }
 

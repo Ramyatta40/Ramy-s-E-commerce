@@ -42,4 +42,5 @@ public interface Api {
             @Part("Id_categories") RequestBody id_categories
     );
 
+
 }

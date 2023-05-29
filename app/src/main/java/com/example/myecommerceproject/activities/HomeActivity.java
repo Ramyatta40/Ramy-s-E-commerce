@@ -11,12 +11,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myecommerceproject.Api;
+import com.example.myecommerceproject.ShopInt;
 import com.example.myecommerceproject.models.BannerItem;
 import com.example.myecommerceproject.adapters.BannerRecycleAdapter;
 import com.example.myecommerceproject.models.CategoryItem;
 import com.example.myecommerceproject.adapters.CategorySelectAdapter;
 import com.example.myecommerceproject.R;
 import com.example.myecommerceproject.RetrofitClint;
+import com.example.myecommerceproject.models.ShopItem;
 
 import java.util.List;
 
@@ -24,7 +26,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements ShopInt {
     RecyclerView bannerRecycler;
     RecyclerView categorySelect;
     TextView see_all_cat;
@@ -89,5 +91,10 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void showShop(List<ShopItem> shopItemList) {
+        bannerRecycler.setAdapter(new BannerRecycleAdapter(HomeActivity.this, response.body()));
     }
 }

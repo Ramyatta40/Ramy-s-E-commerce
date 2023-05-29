@@ -1,15 +1,16 @@
 package com.example.myecommerceproject.models;
 
 public class BannerItem {
-int Id;
+String Id;
 String ImageURL;
 String URL;
 
-    public int getId() {
+
+    public String getId() {
         return Id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         Id = id;
     }
 
