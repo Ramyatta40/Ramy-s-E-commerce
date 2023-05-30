@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.myecommerceproject.Api;
 import com.example.myecommerceproject.ShopInt;
+import com.example.myecommerceproject.adapters.ShopsAdapter;
 import com.example.myecommerceproject.models.BannerItem;
 import com.example.myecommerceproject.adapters.BannerRecycleAdapter;
 import com.example.myecommerceproject.models.CategoryItem;
@@ -30,6 +31,7 @@ public class HomeActivity extends AppCompatActivity implements ShopInt {
     RecyclerView bannerRecycler;
     RecyclerView categorySelect;
     TextView see_all_cat;
+    RecyclerView shops_rec_home ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +40,10 @@ public class HomeActivity extends AppCompatActivity implements ShopInt {
         see_all_cat = findViewById(R.id.see_all_cat);
         bannerRecycler = findViewById(R.id.banner_recycler);
         categorySelect = findViewById(R.id.categories_select);
+        shops_rec_home = findViewById(R.id.shops_rec_home);
         bannerRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         categorySelect.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-
+        shops_rec_home.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         see_all_cat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,6 +98,6 @@ public class HomeActivity extends AppCompatActivity implements ShopInt {
 
     @Override
     public void showShop(List<ShopItem> shopItemList) {
-        bannerRecycler.setAdapter(new BannerRecycleAdapter(HomeActivity.this, response.body()));
+        shops_rec_home.setAdapter(new ShopsAdapter(HomeActivity.this,shopItemList));
     }
 }

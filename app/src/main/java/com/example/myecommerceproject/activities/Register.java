@@ -2,6 +2,7 @@ package com.example.myecommerceproject.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,6 +37,7 @@ public class Register extends AppCompatActivity {
     Button gotIt;
     BottomSheetDialog dialog;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

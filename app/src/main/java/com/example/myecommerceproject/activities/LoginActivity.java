@@ -33,7 +33,8 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     UserModel loginEntry;
     boolean isRememberChecked;
-CheckBox rememberCheck;
+    CheckBox rememberCheck;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,13 +51,13 @@ CheckBox rememberCheck;
                 login();
             }
         });
-rememberCheck.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-       boolean isChecked= ((CheckBox)view).isChecked();
-        isRememberChecked = isChecked;
-    }
-});
+        rememberCheck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean isChecked = ((CheckBox) view).isChecked();
+                isRememberChecked = isChecked;
+            }
+        });
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,10 +84,9 @@ rememberCheck.setOnClickListener(new View.OnClickListener() {
                 pd.dismiss();
                 if (response.body().isResult()) {
                     Toast.makeText(LoginActivity.this, "Done", Toast.LENGTH_LONG).show();
-                    if (isRememberChecked){
+                    if (isRememberChecked) {
                         General.addToSharedPreference(LoginActivity.this, "Id", response.body().getId());
-                    }
-                    else{
+                    } else {
                         General.addToSharedPreference(LoginActivity.this, "Id", "");
                     }
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
@@ -99,7 +99,7 @@ rememberCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onFailure(Call<UserModel> call, Throwable t) {
                 pd.dismiss();
-
+                Toast.makeText(LoginActivity.this, "somthing wronge", Toast.LENGTH_LONG).show();
             }
         });
 
