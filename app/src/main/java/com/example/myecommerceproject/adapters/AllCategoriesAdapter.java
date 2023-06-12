@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myecommerceproject.Api;
@@ -18,6 +19,7 @@ import com.example.myecommerceproject.RetrofitClint;
 import com.example.myecommerceproject.ShopInt;
 import com.example.myecommerceproject.activities.HomeActivity;
 import com.example.myecommerceproject.activities.LoginActivity;
+import com.example.myecommerceproject.activities.ShopsCollectionsActivity;
 import com.example.myecommerceproject.models.CategoryItem;
 import com.example.myecommerceproject.models.ShopItem;
 import com.example.myecommerceproject.models.UserModel;
@@ -63,7 +65,9 @@ public class AllCategoriesAdapter extends RecyclerView.Adapter<AllCategoriesAdap
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getShops(items.get(position).getId());
+                Intent catIntent = new Intent(c, ShopsCollectionsActivity.class);
+                catIntent.putExtra("Id_category",items.get(position).getId());
+                c.startActivity(catIntent);
             }
         });
 
@@ -74,29 +78,5 @@ public class AllCategoriesAdapter extends RecyclerView.Adapter<AllCategoriesAdap
         return items.size();
     }
 
-    public void getShops(String id_categories) {
 
-
-        Api service = RetrofitClint.getApiService();
-
-        RequestBody id_categoriesRequestBody = RequestBody.create(MediaType.parse("text/plain"), id_categories);
-
-        Call<List<ShopItem>> retCall = service.getShops(id_categoriesRequestBody);
-        retCall.enqueue(new Callback<List<ShopItem>>() {
-            @Override
-
-            public void onResponse(Call<List<ShopItem>> call, Response<List<ShopItem>> response) {
-                ShopInt shopInt = (HomeActivity) c;
-                shopInt.showShop(response.body());
-
-            }
-
-            @Override
-            public void onFailure(Call<List<ShopItem>> call, Throwable t) {
-
-
-            }
-        });
-
-    }
 }

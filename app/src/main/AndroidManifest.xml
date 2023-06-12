@@ -14,7 +14,7 @@
         android:theme="@style/Theme.MyECommerceProject"
         tools:targetApi="31">
         <activity
-            android:name=".ShopsCollectionsActivity"
+            android:name=".activities.ShopsCollectionsActivity"
             android:exported="false" />
         <activity
             android:name=".activities.AllCategoriesActivity"

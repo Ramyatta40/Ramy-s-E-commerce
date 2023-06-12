@@ -5,5 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.ShopsCollectionsActivity">
+    <ImageView
 
+        android:id="@+id/back_shops"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="@dimen/_10sdp"
+        />
+
+    <TextView
+        android:id="@+id/shops_collection_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All Categories"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/back_shops"
+
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/shops_collection_rec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/shops_collection_label"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_15sdp"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
