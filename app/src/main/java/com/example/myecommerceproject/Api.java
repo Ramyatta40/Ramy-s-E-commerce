@@ -39,7 +39,7 @@ public interface Api {
     @Multipart
     @POST ("getShops.php")
     Call<List<ShopItem>> getShops(
-            @Part("Id_categories") RequestBody id_categories
+            @Part("Id_category") RequestBody id_categories
     );
 
 

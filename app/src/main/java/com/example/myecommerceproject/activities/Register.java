@@ -51,8 +51,9 @@ public class Register extends AppCompatActivity {
         password2 = findViewById(R.id.password2);
         registerBtn = findViewById(R.id.registerBtn);
         dialog = new BottomSheetDialog(this);
-        gotIt = findViewById(R.id.got_it);
+
         View view = getLayoutInflater().inflate(R.layout.bottom_sheet, null, false);
+        gotIt = view.findViewById(R.id.got_it);
         dialog.setContentView(view);
         log_in.setOnClickListener(new View.OnClickListener() {
             @Override

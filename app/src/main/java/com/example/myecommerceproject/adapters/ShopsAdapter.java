@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,10 +29,12 @@ public class ShopsAdapter extends RecyclerView.Adapter<ShopsAdapter.viewItem> {
     class viewItem extends RecyclerView.ViewHolder {
        // Button button;
         ImageView imageView;
+        TextView shopName;
         public viewItem(View itemView) {
             super(itemView);
            // button = itemView.findViewById(R.id.select_btn);
             imageView = itemView.findViewById(R.id.shop_image_home);
+            shopName = itemView.findViewById(R.id.shop_name);
         }
 
     }
@@ -45,6 +48,7 @@ public class ShopsAdapter extends RecyclerView.Adapter<ShopsAdapter.viewItem> {
     @Override
     public void onBindViewHolder(ShopsAdapter.viewItem holder, final int position) {
         Glide.with(c).load(items.get(position).getImageURL()).into(holder.imageView);
+        holder.shopName.setText(items.get(position).getName());
 
     }
 

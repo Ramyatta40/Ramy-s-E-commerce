@@ -14,6 +14,21 @@
 android:src="@drawable/ic_launcher_background"
         android:background="@drawable/rectangle2_shop_image"
         />
+    <TextView
+        android:id="@+id/shop_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="shop name"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="@dimen/_14ssp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/shop_image_home"
+
+        />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

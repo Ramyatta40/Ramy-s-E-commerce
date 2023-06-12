@@ -83,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<UserModel> call, Response<UserModel> response) {
                 pd.dismiss();
                 if (response.body().isResult()) {
-                    Toast.makeText(LoginActivity.this, "Done", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_LONG).show();
                     if (isRememberChecked) {
                         General.addToSharedPreference(LoginActivity.this, "Id", response.body().getId());
                     } else {
