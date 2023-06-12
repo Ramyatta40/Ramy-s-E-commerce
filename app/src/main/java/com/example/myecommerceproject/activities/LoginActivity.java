@@ -31,9 +31,10 @@ public class LoginActivity extends AppCompatActivity {
     EditText phoneNum;
     EditText password;
     Button login;
-    UserModel loginEntry;
+    //public UserModel currentUser;
     boolean isRememberChecked;
     CheckBox rememberCheck;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,8 +85,14 @@ public class LoginActivity extends AppCompatActivity {
                 pd.dismiss();
                 if (response.body().isResult()) {
                     Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_LONG).show();
+                    UserModel.currentUser = response.body();
                     if (isRememberChecked) {
                         General.addToSharedPreference(LoginActivity.this, "Id", response.body().getId());
+                        General.addToSharedPreference(LoginActivity.this, "Name", response.body().getName());
+                        General.addToSharedPreference(LoginActivity.this, "ConCode", response.body().getConCode());
+                        General.addToSharedPreference(LoginActivity.this, "Phone", response.body().getPhone());
+                        General.addToSharedPreference(LoginActivity.this, "Email", response.body().getEmail());
+
                     } else {
                         General.addToSharedPreference(LoginActivity.this, "Id", "");
                     }

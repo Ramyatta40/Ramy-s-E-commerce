@@ -1,7 +1,7 @@
 package com.example.myecommerceproject.models;
 
 public class UserModel {
-
+public static UserModel currentUser;
     private boolean result;
     private String msg;
     private String Id;

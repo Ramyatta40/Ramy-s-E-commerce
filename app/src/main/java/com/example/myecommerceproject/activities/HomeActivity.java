@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,12 +32,14 @@ public class HomeActivity extends AppCompatActivity implements ShopInt {
     RecyclerView bannerRecycler;
     RecyclerView categorySelect;
     TextView see_all_cat;
-    RecyclerView shops_rec_home ;
+    RecyclerView shops_rec_home;
+    ImageView profPicHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        profPicHome = findViewById(R.id.profPicHome);
         see_all_cat = findViewById(R.id.see_all_cat);
         bannerRecycler = findViewById(R.id.banner_recycler);
         categorySelect = findViewById(R.id.categories_select);
@@ -51,7 +54,13 @@ public class HomeActivity extends AppCompatActivity implements ShopInt {
                 startActivity(intent);
             }
         });
-
+        profPicHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, MyProfileActivity.class);
+                startActivity(intent);
+            }
+        });
         getBannerImages();
         getCategoriesData();
 
@@ -98,6 +107,6 @@ public class HomeActivity extends AppCompatActivity implements ShopInt {
 
     @Override
     public void showShop(List<ShopItem> shopItemList) {
-        shops_rec_home.setAdapter(new ShopsAdapter(HomeActivity.this,shopItemList));
+        shops_rec_home.setAdapter(new ShopsAdapter(HomeActivity.this, shopItemList));
     }
 }

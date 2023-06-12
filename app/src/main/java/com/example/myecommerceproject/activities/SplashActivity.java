@@ -11,6 +11,7 @@ import android.widget.ImageView;
 
 import com.example.myecommerceproject.General;
 import com.example.myecommerceproject.R;
+import com.example.myecommerceproject.models.UserModel;
 
 public class SplashActivity extends AppCompatActivity {
     ImageView icon;
@@ -27,11 +28,15 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                 Intent intent2 = new Intent(SplashActivity.this, HomeActivity.class);
-                String Id = General.getPreferenceValue(SplashActivity.this,"Id","");
-                if (Id != ""){
+                String Id = General.getPreferenceValue(SplashActivity.this, "Id", "");
+                if (Id != "") {
+//                    UserModel.currentUser.setId(Id);
+//                    UserModel.currentUser.setName(General.getPreferenceValue(SplashActivity.this, "Name", ""));
+//                    UserModel.currentUser.setConCode(General.getPreferenceValue(SplashActivity.this, "ConCode", ""));
+//                    UserModel.currentUser.setPhone( General.getPreferenceValue(SplashActivity.this, "Phone", "") );
+//                    UserModel.currentUser.setEmail( General.getPreferenceValue(SplashActivity.this, "Email", "") );
                     startActivity(intent2);
-                }
-                else {
+                } else {
                     startActivity(intent);
                 }
 
